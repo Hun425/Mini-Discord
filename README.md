@@ -34,6 +34,9 @@ REDIS_HOST=example.com PORT=8080 ./scripts/load-test.sh
 ./gradlew bootJar
 ```
 
+
+`WS_HOST`와 `PORT` 환경 변수를 지정하면 접속할 서버를 변경할 수 있습니다.
+=======
 이후 아래 명령으로 컨테이너를 실행합니다.
 
 ```bash
