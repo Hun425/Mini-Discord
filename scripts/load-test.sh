@@ -3,7 +3,7 @@
 
 set -euo pipefail
 
-REDIS_HOST="${REDIS_HOST:-localhost}"
+WS_HOST="${WS_HOST:-localhost}"
 PORT="${PORT:-8080}"
 
 for i in $(seq 1 100); do
@@ -12,7 +12,7 @@ for i in $(seq 1 100); do
       echo "load test $i $j"
       sleep 1
     done
-  ) | websocat "ws://$REDIS_HOST:$PORT/ws/chat" >/dev/null &
+  ) | websocat "ws://$WS_HOST:$PORT/ws/chat" >/dev/null &
 done
 
 wait

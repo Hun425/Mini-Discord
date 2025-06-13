@@ -23,5 +23,5 @@ WebSocket 연결 부하 테스트용 `scripts/load-test.sh` 파일을 제공합�
 chmod +x scripts/load-test.sh
 ```
 
-`REDIS_HOST`와 `PORT` 환경 변수를 지정하면 접속할 서버를 변경할 수 있습니다.
+`WS_HOST`와 `PORT` 환경 변수를 지정하면 접속할 서버를 변경할 수 있습니다.
 
