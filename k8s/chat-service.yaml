@@ -3,9 +3,10 @@ kind: Service
 metadata:
   name: chat
 spec:
+  # NodePort 타입을 사용하여 외부 접근을 허용합니다.
   type: NodePort
   selector:
-    app: chat
+    app: mini-discord-chat
   ports:
     - port: 8080
       targetPort: 8080
