@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mini-discord-hpa-demo
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mini-discord-chat
+  template:
+    metadata:
+      labels:
+        app: mini-discord-chat
+    spec:
+      containers:
+        - name: chat-server
+          image: username/mini-discord-chat:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: REDIS_HOST
+              value: "redis"
+            - name: REDIS_PORT
+              value: "6379"
