@@ -1,17 +1,14 @@
 # Mini-Discord
 쿠버네티스 실습을 위한 미니 디스코드 프로젝트
 
-## 배포 스크립트 사용법
-`scripts/deploy.sh`를 실행하기 전에 다음 명령으로 실행 권한을 부여하세요.
+## 배포 방법
+Docker Compose를 이용해 이미지를 빌드한 뒤 레지스트리에 푸시하고 쿠버네티스에 적용합니다.
 
 ```bash
-chmod +x scripts/deploy.sh
-```
-
-권한 부여 후 아래 명령으로 빌드와 배포를 한 번에 실행할 수 있습니다.
-
-```bash
-./scripts/deploy.sh
+docker compose -f docker-compose.yml build
+docker tag mini-discord-chat:dev username/mini-discord-chat:latest
+docker push username/mini-discord-chat:latest
+kubectl apply -f k8s/
 ```
 
 ## 부하 테스트 스크립트
@@ -36,7 +33,7 @@ gradle bootJar
 ```
 
 
-`WS_HOST`와 `PORT` 환경 변수를 지정하면 접속할 서버를 변경할 수 있습니다.
+
 이후 아래 명령으로 컨테이너를 실행합니다.
 
 ```bash
