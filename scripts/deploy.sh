@@ -2,7 +2,7 @@
 set -e
 
 # Gradle build
-./gradlew bootJar
+gradle bootJar
 
 # Docker build and push
 IMAGE_NAME="username/mini-discord-chat:latest"
