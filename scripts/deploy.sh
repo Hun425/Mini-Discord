@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+
 # 빌드할 이미지 이름을 환경 변수로 지정할 수 있습니다.
 IMAGE_NAME="${IMAGE_NAME:-username/mini-discord-chat:latest}"
+
 
 # Docker Compose를 사용해 애플리케이션 이미지를 빌드합니다.
 docker compose -f docker-compose.yml build
